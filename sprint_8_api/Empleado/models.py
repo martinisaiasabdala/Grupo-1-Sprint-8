@@ -1,4 +1,5 @@
 from django.db import models
+from Sucursal.models import Branch, Address
 
 # Create your models here.
 class Employee(models.Model):

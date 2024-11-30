@@ -1,8 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import User
+from Sucursal.models import Branch, Address
 
-# Create your models here.
-from sucursales.models import Branch, Address
+class AccountType(models.Model):
+    account_type_id = models.AutoField(primary_key=True)
+    account_type_name = models.CharField(max_length=50)
+    account_type_currency = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = 'AccountType'
+
+    def __str__(self):
+        return self.account_type_name
 
 class ClientType(models.Model):
     client_type_id = models.AutoField(primary_key=True)
@@ -58,16 +66,15 @@ class Loan(models.Model):
     def __str__(self):
         return f"Préstamo {self.loan_id} - Total: {self.loan_total}"
 
-class AccountType(models.Model):
-    account_type_id = models.AutoField(primary_key=True)
-    account_type_name = models.CharField(max_length=50)
-    account_type_currency = models.CharField(max_length=10)
+class CardBrand(models.Model):
+    card_brand_id = models.AutoField(primary_key=True)
+    card_brand_name = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'AccountType'
+        db_table = 'CardBrand'
 
     def __str__(self):
-        return self.account_type_name
+        return self.card_brand_name
 
 class Card(models.Model):
     card_id = models.AutoField(primary_key=True)
@@ -85,12 +92,3 @@ class Card(models.Model):
     def __str__(self):
         return f"{self.card_type.capitalize()} Card {self.card_number}"
 
-class CardBrand(models.Model):
-    card_brand_id = models.AutoField(primary_key=True)
-    card_brand_name = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'CardBrand'
-
-    def __str__(self):
-        return self.card_brand_name
