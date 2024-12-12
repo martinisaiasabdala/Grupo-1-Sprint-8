@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">¡Bienvenido, {{ user.username }}!</h1>
+            <p class="text-center">Has iniciado sesión exitosamente.</p>
+            
+            <!-- Contenedor de botones -->
+            <div class="d-grid gap-3">
+                <!-- Botón para Crear Cuentas -->
+                <a href="{% url 'create_account' %}" class="btn btn-primary w-100">Crear Cuenta</a>
+
+                <!-- Botón para Crear Targeta -->
+                <a href="{% url 'create_card' %}" class="btn btn-primary w-100">Crear Targeta</a>
+
+                <!-- Botón para Solicitar Prestamo -->
+                <a href="{% url 'solicitar_prestamo' %}" class="btn btn-primary w-100">Solicitar Prestamo</a>
+
+                <!-- Botón para Detalle de Clientes -->
+                <a href="{% url 'detail' %}" class="btn btn-secondary w-100">Detalle de Cliente</a>
+
+                <!-- Botón para Listado Cuentas -->
+                <a href="{% url 'list_accounts' %}" class="btn btn-secondary w-100">Mis Cuentas</a>
+
+                <!-- Botón para Listado Targetas -->
+                <a href="{% url 'client_cards' %}" class="btn btn-secondary w-100">Mis Targetas</a>
+
+                <!-- Botón para Listado Prestamos -->
+                <a href="{% url 'mis_prestamos' %}" class="btn btn-secondary w-100">Mis Prestamos</a>
+
+                
+
+                <!-- Formulario de Logout -->
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger w-100">Cerrar sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

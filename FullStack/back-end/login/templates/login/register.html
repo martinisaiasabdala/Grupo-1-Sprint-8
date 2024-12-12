@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <!-- Incluimos Bootstrap desde CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Registrarse</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_username">Nombre de usuario</label>
+                            <input type="text" name="username" class="form-control" id="id_username" value="{{ form.username.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email">Correo electrónico</label>
+                            <input type="email" name="email" class="form-control" id="id_email" value="{{ form.email.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password">Contraseña</label>
+                            <input type="password" name="password" class="form-control" id="id_password" value="{{ form.password.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_dni">DNI del Cliente</label>
+                            <input type="text" name="dni" class="form-control" id="id_dni" value="{{ form.dni.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_customer_name">Nombre del Cliente</label>
+                            <input type="text" name="customer_name" class="form-control" id="id_customer_name" value="{{ form.customer_name.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_customer_surname">Apellido del Cliente</label>
+                            <input type="text" name="customer_surname" class="form-control" id="id_customer_surname" value="{{ form.customer_surname.value }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_customer_birth">Fecha de Nacimiento</label>
+                            <input type="date" name="customer_birth" class="form-control" id="id_customer_birth" value="{{ form.customer_birth.value }}">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                    </form>
+                    <p class="mt-3 text-center">¿Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Incluimos los scripts de Bootstrap al final -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
