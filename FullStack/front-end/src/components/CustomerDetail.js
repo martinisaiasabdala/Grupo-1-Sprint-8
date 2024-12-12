@@ -28,14 +28,14 @@ const CustomerDetail = () => {
   return (
     <div>
       <h1>Detalles del Cliente</h1>
-      {customer.length > 0 ? (
+      {customer ? (
         <ul>
           {customer.map((c) => (
             <li key={c.loan_id}>
               <p>Nombre: {c.customer_name}</p>
               <p>Apellido: {c.customer_surname}</p>
               <p>DNI: {c.customer_DNI}</p>
-              <p>Fecha De Nacimientp: {c.customer_birth}</p>
+              <p>Fecha De Nacimiento: {c.customer_birth}</p>
 
             </li>
           ))}
