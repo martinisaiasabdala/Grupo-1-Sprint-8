@@ -140,3 +140,19 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',  # Permite la exploración en el navegador
     ],
 }
+
+INSTALLED_APPS += ['corsheaders']
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+# Allow all origins (for testing purposes)
+CORS_ALLOW_ALL_ORIGINS = True
+
+# OR restrict to specific origins
+# CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'https://example.com']
+
+# Allow credentials if needed
+CORS_ALLOW_CREDENTIALS = True
+
+# Add allowed methods and headers
+CORS_ALLOW_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+CORS_ALLOW_HEADERS = ['Authorization', 'Content-Type']
