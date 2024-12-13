@@ -8,15 +8,15 @@ const AccountList = () => {
   useEffect(() => {
     const fetchAccounts = async () => {
       try {
-         // Basic Authentication credentials
-         const username = 'nino';
-         const password = 'ninonino12';
-         const response = await api.get('api/cuentas/', {
-           auth: {
-             username: username,
-             password: password,
-           },
-         });
+        // Basic Authentication credentials
+        const username = 'nino';
+        const password = 'ninonino12';
+        const response = await api.get('api/cuentas/', {
+          auth: {
+            username: username,
+            password: password,
+          },
+        });
         setAccounts(response.data);
 
       }
@@ -35,8 +35,8 @@ const AccountList = () => {
         <ul>
           {accounts.map((account) => (
             <li key={account.id}>
-               <p>Tipo de Cuenta: {account.tipo}</p> 
-               <p>Saldo: ${account.customer_account_balance}</p>
+              <p>Tipo de Cuenta: {account.tipo}</p>
+              <p>Saldo: ${account.customer_account_balance}</p>
             </li>
           ))}
         </ul>
