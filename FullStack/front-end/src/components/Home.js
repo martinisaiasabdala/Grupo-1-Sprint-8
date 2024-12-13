@@ -19,7 +19,7 @@ const Home = () => {
                 </div>
                 <div className="home-card">
                     <h2>Contacto</h2>
-                    <p>¿Tienes alguna pregunta? No dudes en contactarnos.</p>
+                    <p>¿Tenes alguna pregunta? No dudes en contactarnos.</p>
                 </div>
             </section>
             <footer className="home-footer">
