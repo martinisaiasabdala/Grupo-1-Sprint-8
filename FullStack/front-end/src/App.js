@@ -3,6 +3,8 @@ import './App.css';
 import AccountList from './components/AccountList';
 import CustomerDetail from './components/CustomerDetail';
 import LoanList from './components/LoanList';
+import BranchList from './components/BranchList'; 
+import CardCustomerList from './components/CardCustomerList';
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
         <AccountList />
         <CustomerDetail />
         <LoanList />
+        <BranchList />
+        <CardCustomerList />
+
       </header>
       
     </div>
