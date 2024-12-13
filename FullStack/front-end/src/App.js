@@ -5,6 +5,7 @@ import CustomerDetail from './components/CustomerDetail';
 import LoanList from './components/LoanList';
 import BranchList from './components/BranchList'; 
 import CardCustomerList from './components/CardCustomerList';
+import LoanBranchList from './components/LoanBranchList';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <LoanList />
         <BranchList />
         <CardCustomerList />
+        <LoanBranchList />
 
       </header>
       
