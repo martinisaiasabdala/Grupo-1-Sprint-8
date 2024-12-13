@@ -23,7 +23,7 @@ const Home = () => {
                 </div>
             </section>
             <footer className="home-footer">
-                <p>&copy; 2023 Nuestro Sitio. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Nuestro Sitio. Todos los derechos reservados.</p>
             </footer>
         </div>
     );
