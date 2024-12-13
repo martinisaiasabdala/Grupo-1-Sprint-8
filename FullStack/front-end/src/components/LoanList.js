@@ -32,15 +32,24 @@ const LoanList = () => {
     <div>
       <h1>Mis Préstamos</h1>
       {loans.length > 0 ? (
-        <ul>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
           {loans.map((loan) => (
-            <li key={loan.loan_id}>
-              <p>Monto: ${loan.loan_total}</p>
-              <p>Fecha de Vencimiento: {loan.loan_date}</p>
-              <p>Estado: {loan.loan_status}</p>
-            </li>
+            <div
+              key={loan.loan_id}
+              style={{
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                padding: '16px',
+                width: '300px',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              }}
+            >
+              <p><strong>Monto:</strong> ${loan.loan_total}</p>
+              <p><strong>Fecha de Vencimiento:</strong> {loan.loan_date}</p>
+              <p><strong>Estado:</strong> {loan.loan_status}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No tienes préstamos registrados.</p>
       )}

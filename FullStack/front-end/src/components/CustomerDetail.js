@@ -29,22 +29,21 @@ const CustomerDetail = () => {
     <div>
       <h1>Detalles del Cliente</h1>
       {customer ? (
-        <ul>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
           {customer.map((c) => (
-            <li key={c.loan_id}>
-              <p>Nombre: {c.customer_name}</p>
-              <p>Apellido: {c.customer_surname}</p>
-              <p>DNI: {c.customer_DNI}</p>
-              <p>Fecha De Nacimiento: {c.customer_birth}</p>
-
-            </li>
+            <div key={c.loan_id} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '16px', width: '300px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+              <p><strong>Nombre:</strong> {c.customer_name}</p>
+              <p><strong>Apellido:</strong> {c.customer_surname}</p>
+              <p><strong>DNI:</strong> {c.customer_DNI}</p>
+              <p><strong>Fecha De Nacimiento:</strong> {new Date(c.customer_birth).toLocaleDateString()}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No tienes clientes registrados.</p>
       )}
     </div>
   );
-};
+}
 
 export default CustomerDetail;

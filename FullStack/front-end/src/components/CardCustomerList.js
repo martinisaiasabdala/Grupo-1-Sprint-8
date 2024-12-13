@@ -27,24 +27,25 @@ const CardCustomerList = () => {
     fetchSucursales();
   }, []);
 
-  return (
+return (
     <div>
-      <h1>Targetas Del Cliente</h1>
-      {targetas.length > 0 ? (
-        <ul>
-          {targetas.map((t) => (
-            <li key={t.card_id}>
-              <p>Numero de Tarjeta: {t.card_number}</p>
-              <p>Marca: {t.marca}</p>
-              <p>Nombre: {t.cliente}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No tienes targetas registrados.</p>
-      )}
+        <h1>Tarjetas Del Cliente</h1>
+        <p>Total de tarjetas: {targetas.length}</p>
+        {targetas.length > 0 ? (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+                {targetas.map((t) => (
+                    <div key={t.card_id} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '16px', width: '200px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <p><strong>Número de Tarjeta:</strong> {t.card_number}</p>
+                        <p><strong>Marca:</strong> {t.marca}</p>
+                        <p><strong>Nombre:</strong> {t.cliente}</p>
+                    </div>
+                ))}
+            </div>
+        ) : (
+            <p>No tienes tarjetas registradas.</p>
+        )}
     </div>
-  );
+);
 };
 
 export default CardCustomerList;

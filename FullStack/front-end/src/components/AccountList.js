@@ -32,11 +32,12 @@ const AccountList = () => {
     <div>
       <h1>Mis Cuentas</h1>
       {accounts.length > 0 ? (
-        <ul>
-          {accounts.map((account) => (
-            <li key={account.id}>
-               <p>Tipo de Cuenta: {account.tipo}</p> 
-               <p>Saldo: ${account.customer_account_balance}</p>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
+          {accounts.map((account, index) => (
+            <li key={account.id} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '16px', marginBottom: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+              <p><strong>Cuenta {index + 1}</strong></p>
+              <p><strong>Tipo de Cuenta:</strong> {account.tipo}</p>
+              <p><strong>Saldo:</strong> ${account.customer_account_balance.toFixed(2)}</p>
             </li>
           ))}
         </ul>
