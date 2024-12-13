@@ -1,7 +1,6 @@
 import './App.css';
 import AccountList from './components/AccountList';
 import CustomerDetail from './components/CustomerDetail';
-import BranchList from './components/BranchList';
 import CardCustomerList from './components/CardCustomerList';
 import LoanBranchList from './components/LoanBranchList';
 import Home from './components/Home';
