@@ -8,15 +8,15 @@ const AccountList = () => {
   useEffect(() => {
     const fetchAccounts = async () => {
       try {
-         // Basic Authentication credentials
-         const username = 'nino';
-         const password = 'ninonino12';
-         const response = await api.get('api/cuentas/', {
-           auth: {
-             username: username,
-             password: password,
-           },
-         });
+        // Basic Authentication credentials
+        const username = 'nino';
+        const password = 'ninonino12';
+        const response = await api.get('api/cuentas/', {
+          auth: {
+            username: username,
+            password: password,
+          },
+        });
         setAccounts(response.data);
 
       }

@@ -27,5 +27,7 @@ class Card(models.Model):
     class Meta:
         db_table = 'Card'
 
-    def __str__(self):
+def __str__(self):
+    if self.card_type:
         return f"{self.card_type.capitalize()} Card {self.card_number}"
+    return f"Card {self.card_number}"
