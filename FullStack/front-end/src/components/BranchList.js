@@ -17,24 +17,24 @@ const BranchList = () => {
     fetchSucursales();
   }, []);
 
-return (
+  return (
     <div>
-        <h1>Sucursales</h1>
-        {sucursales.length > 0 ? (
-            <ul>
-                {sucursales.map((s) => (
-                    <li key={s.branch_id}>
-                        <p><strong>Nombre:</strong> {s.branch_name}</p>
-                        <p><strong>Dirección:</strong> {s.branch_address}</p>
-                        <p><strong>Teléfono:</strong> {s.branch_phone}</p>
-                    </li>
-                ))}
-            </ul>
-        ) : (
-            <p>No tienes sucursales registrados.</p>
-        )}
+      <h1>Sucursales</h1>
+      {sucursales.length > 0 ? (
+        <ul>
+          {sucursales.map((s) => (
+            <li key={s.branch_id}>
+              <p><strong>Nombre:</strong> {s.branch_name}</p>
+              <p><strong>Dirección:</strong> {s.branch_address}</p>
+              <p><strong>Teléfono:</strong> {s.branch_phone}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No tienes sucursales registrados.</p>
+      )}
     </div>
-);
+  );
 };
 
 export default BranchList;

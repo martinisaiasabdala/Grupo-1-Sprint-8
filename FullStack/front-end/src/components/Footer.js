@@ -22,16 +22,11 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className="enlaces">
+                </div>
+                <div className="enlaces">
                     <h2 className="footerTitulo">LEGAL</h2>
                     <a href='/terminos-y-condiciones'>Términos y condiciones</a>
                     <a href='/politica-de-privacidad'>Política de privacidad</a>
-                </div>
-                <div className="enlaces">
-                    <h2 className="footerTitulo">ENLACES</h2>
-                    <a href='/transferencias'>Transferencias</a>
-                    <a href='/pagos'>Pagos de facturas</a>
-                    <a href='/solicitar-prestamo'>Solicitar prestamo</a>
-                    <a href='/simular-prestamo'>Simular prestamo</a>
                 </div>
                 <div className="redes">
                     <a href="https://www.facebook.com/" target="facebook">

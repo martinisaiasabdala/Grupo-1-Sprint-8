@@ -3,6 +3,7 @@ import AccountList from './components/AccountList';
 import CustomerDetail from './components/CustomerDetail';
 import CardCustomerList from './components/CardCustomerList';
 import LoanBranchList from './components/LoanBranchList';
+import BranchList from './components/BranchList';
 import Home from './components/Home';
 
 // Componentes previamente creados
@@ -16,6 +17,7 @@ import UpdateAddress from './components/UpdateAddress';
 
 import React, { useState } from 'react';
 import { Footer } from './components/Footer';
+import Aside from './components/Aside';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,20 +45,7 @@ function App() {
         </a>
       </header>
       <div className='bodyapp'>
-        <aside className='aside'>
-          <ul>
-            {Object.keys(components).map((key) => (
-              <li key={key}>
-                <a href="#" onClick={(e) => {
-                  e.preventDefault();
-                  setActiveComponent(key);
-                }}>
-                  {key}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </aside>
+        <Aside components={components} setActiveComponent={setActiveComponent} />
         <main className="App-content">
           <section className='container_main'>
             {activeComponent && components[activeComponent]}

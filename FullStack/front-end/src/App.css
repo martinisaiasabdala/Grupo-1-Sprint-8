@@ -114,7 +114,6 @@ input {
   background-color: #fbfbfb;
   font-family: 'Plus Jakarta Sans', sans-serif;
   padding: 20px;
-  overflow-y: auto;
 }
 
 .aside h2 {
@@ -127,7 +126,7 @@ input {
 }
 
 .aside ul li {
-  margin: 15px 0;
+  padding: 10px;
 }
 
 .aside ul li a:hover {
@@ -136,6 +135,13 @@ input {
 
 .aside ul li a {
   text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  display: flex;
+  padding: 10px;
+  border-radius: 4px;
+  align-items: center;
+  text-align: center;
 }
 
 .bodyapp {
@@ -158,6 +164,10 @@ input {
   padding: 64px;
   background-color: #f5f6fa;
   border-start-start-radius: 10px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px) {
